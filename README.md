@@ -18,7 +18,7 @@ Para executar o chatbot, você precisa ter o Python instalado em sua máquina. A
 Use o seguinte comando para instalar as dependências:
 
 ```bash
-`pip install nltk scikit-learn` 
+pip install nltk scikit-learn`
 ```
 ### Executando o Chatbot
 
@@ -26,7 +26,7 @@ Use o seguinte comando para instalar as dependências:
 2.  Execute o arquivo `chatbot.py` usando o comando:
 
 ```bash
-`python chatbot.py`
+python chatbot.py
 ``` 
 
 3.  O chatbot estará pronto para receber perguntas e fornecer respostas.
@@ -36,9 +36,9 @@ Use o seguinte comando para instalar as dependências:
 ### Imports Necessários
 
 ```python
-`import nltk
+import nltk
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import CountVectorizer` 
+from sklearn.feature_extraction.text import CountVectorizer
 ```
 O código importa a biblioteca NLTK para processamento de linguagem e scikit-learn para calcular a similaridade semântica das perguntas.
 
@@ -47,11 +47,11 @@ O código importa a biblioteca NLTK para processamento de linguagem e scikit-lea
 A função `semantic_similarity` é usada para melhorar a compreensão do chatbot, permitindo que ele entenda perguntas similares ao conteúdo esperado.
 
 ```python
-`def semantic_similarity(user_input, keywords):
+def semantic_similarity(user_input, keywords):
     vectorizer = CountVectorizer().fit_transform([user_input] + keywords)
     vectors = vectorizer.toarray()
     similarity_matrix = cosine_similarity(vectors)
-    return similarity_matrix[0][1] > 0.5` 
+    return similarity_matrix[0][1] > 0.5
 ```
 ### Lógica Principal
 
@@ -60,12 +60,12 @@ A lógica principal do chatbot está dentro de um loop que processa o input do u
 #### Exemplo de Condicionais para Resposta:
 
 ```python
-`if 'habilidade' in user_input or semantic_similarity(user_input, ['habilidade', 'poderes', 'superforça', 'voar']):
+if 'habilidade' in user_input or semantic_similarity(user_input, ['habilidade', 'poderes', 'superforça', 'voar']):
     response = "Astro possui a habilidade de voar e tem superforça, o que o ajuda a combater o crime em Nova Metropolis."
 elif 'vilão' in user_input or semantic_similarity(user_input, ['vilão', 'doutor caos', 'inimigo']):
     response = "O principal vilão de Astro é o Doutor Caos, um gênio do mal que tenta controlar Nova Metropolis."
 else:
-    response = "Desculpe, não entendi sua pergunta. Pergunte sobre Astro, seus poderes ou sua história!"` 
+    response = "Desculpe, não entendi sua pergunta. Pergunte sobre Astro, seus poderes ou sua história!"
 ```
 ### Perguntas Compreendidas pelo Chatbot
 
