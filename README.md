@@ -18,15 +18,15 @@ Para executar o chatbot, você precisa ter o Python instalado em sua máquina. A
 Use o seguinte comando para instalar as dependências:
 
 ```bash
-pip install nltk scikit-learn`
+pip install nltk scikit-learn
 ```
 ### Executando o Chatbot
 
 1.  Abra o terminal ou PowerShell na pasta do projeto.
-2.  Execute o arquivo `chatbot.py` usando o comando:
+2.  Execute o arquivo `main.py` usando o comando:
 
 ```bash
-python chatbot.py
+python main.py
 ``` 
 
 3.  O chatbot estará pronto para receber perguntas e fornecer respostas.
